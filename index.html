@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Even or Odd Detector</title>
+    <script>
+        function checkNumber() {
+            var inputElement = document.getElementById("numberInput");
+            var inputValue = inputElement.value.trim();
+
+            // Check if the input is empty or not a valid number
+            if (inputValue === '' || isNaN(inputValue)) {
+                alert('Please enter a valid number.');
+                return false; // Prevent form submission
+            }
+
+            if (inputValue % 2 === 0) {
+                window.location.href = "even.html";
+            } else {
+                window.location.href = "odd.html";
+            }
+        }
+    </script>
+</head>
+<body>
+    
+   <div class="surya">
+        <h2>Odd or Even</h2>
+        <form onsubmit="checkNumber(); return false;">
+            <input type="number" id="numberInput" placeholder="Type a number">
+            <button type="submit">Check</button>
+        </form>
+   </div>
+</body>
+</html>
